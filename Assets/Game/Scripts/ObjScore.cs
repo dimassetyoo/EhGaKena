@@ -13,8 +13,13 @@ public class ObjScore : MonoBehaviour
     {
         
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D col)
     {
+        if (col.collider.CompareTag("Player"))
+        {
+            col.gameObject.GetComponent<objPemain>().TambahSkor();
+            Debug.Log("namnbah skor");
+        }
         Destroy(gameObject);
     }
 }

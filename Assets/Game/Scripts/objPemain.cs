@@ -1,12 +1,19 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System;
 
 public class objPemain : MonoBehaviour
 {
     public bool isGrounded;
     public float jumpForce = 12.0f; //variabel untuk tinggi lomapan
-    public int health = 10;
+    public float health = 10;
+    public int maxHealth;
     public int skor;
     public Vector2 mousePosition;
+    public Image healthImage;
+    public TMP_Text teksSkor;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +23,8 @@ public class objPemain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        health= Mathf.Clamp(health, 0, 10);
+
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("lompat");
@@ -56,6 +65,8 @@ public class objPemain : MonoBehaviour
         {
             isGrounded = true;
         }
+
+        
     }
 
     void OnCollisionExit2D(Collision2D collision)
@@ -64,5 +75,33 @@ public class objPemain : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+
+    public void KurangNyawa()
+    {
+        if (health > 0)
+        {
+            health = health -1;
+        healthImage.fillAmount = health/10;
+        } else
+        {
+            PlayerPrefs.SetInt("skor", skor);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("gameOver");
+        }
+        
+    }
+
+    public void tambahNyawa()
+    {
+        
+            health = health +1;      
+        
+    }
+
+     public void TambahSkor()
+    {
+        skor= skor +1;
+        teksSkor.text = "Skor : " + skor.ToString();
     }
 }

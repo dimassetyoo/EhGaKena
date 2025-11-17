@@ -8,6 +8,7 @@ public class timer : MonoBehaviour
     public float time = 60f;
     public TMP_Text timerText;
     public bool isCounting = true;
+    public objPemain objPemain;
 
     private Coroutine timerCoroutine;
 
@@ -35,6 +36,8 @@ public class timer : MonoBehaviour
         {
             isCounting = false;
             timerText.text = "Waktu : 0";
+            PlayerPrefs.SetInt("skor", objPemain.skor);
+            PlayerPrefs.Save();
             SceneManager.LoadScene("ariefYouWin");
         }
     }

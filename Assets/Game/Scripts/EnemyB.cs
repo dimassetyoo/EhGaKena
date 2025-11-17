@@ -21,6 +21,7 @@ public class EnemyB : MonoBehaviour
         // ✔ Jika mengenai pemain → langsung hancur
         if (col.collider.CompareTag("Player"))
         {
+            col.gameObject.GetComponent<objPemain>().KurangNyawa();
             Destroy(gameObject);
             //return;
         }

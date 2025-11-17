@@ -7,7 +7,7 @@ public class EnemyA : MonoBehaviour
         // ❌ Tidak hancur bila menyentuh pemain
         if (col.collider.CompareTag("Player"))
         {
-            
+            col.gameObject.GetComponent<objPemain>().KurangNyawa();
         }
 
         // ❌ Tidak hancur bila menyentuh objek lain selain lantai

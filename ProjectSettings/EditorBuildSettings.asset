@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/ariefPemain.unity
     guid: b6b83c7f1071ffa42a5009be344c68ca
+  - enabled: 1
+    path: Assets/Game/Scenes/gameOver.unity
+    guid: 654bfc255e5f3d74f95937ee260198a8
+  - enabled: 1
+    path: Assets/Game/Scenes/credit.unity
+    guid: b8bdf6b9523094047b03ba321de20a00
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
