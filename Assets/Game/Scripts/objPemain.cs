@@ -52,7 +52,7 @@ public class objPemain : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("lantai"))
+        if (collision.gameObject.CompareTag("Lantai"))
         {
             isGrounded = true;
         }
@@ -60,7 +60,7 @@ public class objPemain : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("lantai"))
+        if (collision.gameObject.CompareTag("Lantai"))
         {
             isGrounded = false;
         }
