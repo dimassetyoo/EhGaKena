@@ -20,7 +20,7 @@ public class SpawnManager : MonoBehaviour
         //InvokeRepeating("SpawnEnemy", 1f, SpawnInterval);
     }
 
-    void HitungBatasLayar()
+    void HitungBatasLayar() //menentukan batas spawn
     {
         Camera cam = Camera.main;
         float jarakZ = Mathf.Abs(cam.transform.position.z);
@@ -32,7 +32,7 @@ public class SpawnManager : MonoBehaviour
         maxX = kanan.x;
     }
 
-    void SpawnObject()
+    void SpawnObject() //menentukan spawn
     {
         float randomX = Random.Range(minX, maxX);
         Vector3 spawnPos = new Vector3(randomX, SpawnPosition.position.y, 0);
@@ -43,7 +43,7 @@ public class SpawnManager : MonoBehaviour
             
     }
 
-    IEnumerator SpawnObjectInterval()
+    IEnumerator SpawnObjectInterval() //untuk menentukan interval waktu spawn object
     {
         while(IsSpawning)
         {
@@ -53,7 +53,7 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-    IEnumerator StartSpawn()
+    IEnumerator StartSpawn()//untuk menentukan delay dari enemyB karena spawn ketika sudah 20 detik
     {
         yield return new WaitForSeconds (StartDelay);
         StartCoroutine (SpawnObjectInterval());

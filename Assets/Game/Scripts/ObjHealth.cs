@@ -18,7 +18,7 @@ public class ObjHealth : MonoBehaviour
         if (col.collider.CompareTag("Player"))
         {
             col.gameObject.GetComponent<objPemain>().tambahNyawa();
-            Debug.Log("namnbah nyawa");
+            Debug.Log("nambah nyawa");
         }
         Destroy(gameObject);
     }

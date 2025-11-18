@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneT1ombol : MonoBehaviour
+public class actionButton : MonoBehaviour //YOU WIN
 {
     public TMP_Text teksSkor;
     public TMP_Text teksHight;
@@ -10,8 +10,8 @@ public class SceneT1ombol : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        teksSkor.text = "Your Score : " + PlayerPrefs.GetInt("skor").ToString();
-        if (PlayerPrefs.HasKey("hightscore"))
+        teksSkor.text = "Your Score : " + PlayerPrefs.GetInt("skor").ToString(); //mengambil last score
+        if (PlayerPrefs.HasKey("hightscore")) //mengambil hight score
         {
             hightscore = PlayerPrefs.GetInt("hightscore");
             teksHight.text = "Hight Score : " + hightscore.ToString();
@@ -20,7 +20,7 @@ public class SceneT1ombol : MonoBehaviour
     }
     public void Aksi()
     {
-        SceneManager.LoadScene("ariefPemain");
+        SceneManager.LoadScene("ariefPemain"); //pindah scene
     }
 
     public void aksiMenu()

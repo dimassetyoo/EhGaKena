@@ -11,7 +11,7 @@ public class objPemain : MonoBehaviour
     public AudioSource soundEnemy;
     public AudioSource soundNyawa;
     public bool isGrounded;
-    public float jumpForce = 12.0f; //variabel untuk tinggi lomapan
+    public float jumpForce = 12.0f; //variabel untuk tinggi lompatan
     public float health = 10;
     public int maxHealth;
     public int skor;

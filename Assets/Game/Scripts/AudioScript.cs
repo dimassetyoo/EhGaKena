@@ -14,9 +14,4 @@ public class AudioScript : MonoBehaviour
     {
         
     }
-
-    void playJump()
-    {
-        
-    }
 }

@@ -23,6 +23,7 @@ public class timer : MonoBehaviour
 
     IEnumerator HitungTimer()
     {
+        //untuk hitung mundur waktu
         while (isCounting && time > 0)
         {
             yield return new WaitForSeconds(1f);
@@ -31,7 +32,7 @@ public class timer : MonoBehaviour
             timerText.text = "Waktu : " + time.ToString();
         }
 
-        // jika waktu habis
+        // kondisi jika waktu habis atau bisa ketika waktu menyentuh waktu tertentu
         if (time <= 0)
         {
             isCounting = false;
