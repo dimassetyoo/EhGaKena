@@ -6,18 +6,27 @@ using System;
 
 public class objPemain : MonoBehaviour
 {
+    public AudioSource soundJump;
+    public AudioSource soundSkor;
+    public AudioSource soundEnemy;
+    public AudioSource soundNyawa;
     public bool isGrounded;
     public float jumpForce = 12.0f; //variabel untuk tinggi lomapan
     public float health = 10;
     public int maxHealth;
     public int skor;
+    public int hightscore;
     public Vector2 mousePosition;
     public Image healthImage;
     public TMP_Text teksSkor;
+    //public TMP_Text teksHight;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        if (PlayerPrefs.HasKey("hightscore"))
+        {
+            hightscore = PlayerPrefs.GetInt("hightscore");
+        }
     }
 
     // Update is called once per frame
@@ -50,6 +59,7 @@ public class objPemain : MonoBehaviour
     {
         if (isGrounded)
         {
+            soundJump.Play();
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
         } else
@@ -79,28 +89,42 @@ public class objPemain : MonoBehaviour
 
     public void KurangNyawa()
     {
-        if (health > 0)
+        if (health > 1)
         {
+            soundEnemy.Play();
             health = health -1;
         healthImage.fillAmount = health/10;
         } else
         {
             PlayerPrefs.SetInt("skor", skor);
             PlayerPrefs.Save();
+            simpanHightSkor();
             SceneManager.LoadScene("gameOver");
         }
         
     }
 
+    public void simpanHightSkor()
+    {
+        if(skor > hightscore)
+        {
+            hightscore = skor;
+            PlayerPrefs.SetInt("hightscore", hightscore);
+            //teksHight.text = "Hight Score : " + hightscore.ToString();
+        }
+    }
+
     public void tambahNyawa()
     {
         
-            health = health +1;      
-        
+        health = health +1;
+        healthImage.fillAmount = health/10;      
+        soundNyawa.Play();
     }
 
      public void TambahSkor()
     {
+        soundSkor.Play();
         skor= skor +1;
         teksSkor.text = "Skor : " + skor.ToString();
     }

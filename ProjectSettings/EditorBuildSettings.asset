@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/ariefYouWin.unity
     guid: d4cd8be46f74f8148b3e418ac09e5072
   - enabled: 1
+    path: Assets/Game/Scenes/ariefMenu.unity
+    guid: c2ced1ed74fed19488e681b3af2458ee
+  - enabled: 1
     path: Assets/Game/Scenes/ariefPemain.unity
     guid: b6b83c7f1071ffa42a5009be344c68ca
   - enabled: 1

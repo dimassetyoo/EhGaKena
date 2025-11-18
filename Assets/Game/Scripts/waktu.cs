@@ -38,6 +38,7 @@ public class timer : MonoBehaviour
             timerText.text = "Waktu : 0";
             PlayerPrefs.SetInt("skor", objPemain.skor);
             PlayerPrefs.Save();
+            objPemain.simpanHightSkor();
             SceneManager.LoadScene("ariefYouWin");
         }
     }
