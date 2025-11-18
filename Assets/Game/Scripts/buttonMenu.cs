@@ -1,9 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections;
 
 public class buttonMenu : MonoBehaviour
 {
+    public AudioSource sfxPlayAgain;
+    public AudioSource sfxMenu;
+    public AudioSource sfxExit;
     public TMP_Text teksSkor;
     public TMP_Text teksHight;
     public int hightscore;
@@ -25,7 +29,9 @@ public class buttonMenu : MonoBehaviour
     }
 
     public void aksiPlay()
-    {
+    {   
+                // StartCoroutine(TungguSuara());
+    
         SceneManager.LoadScene("ariefPemain");
     }
 
@@ -36,10 +42,25 @@ public class buttonMenu : MonoBehaviour
 
     public void aksiExit()
     {
+                sfxExit.Play();
+
         Application.Quit();
     }
     public void aksiMenu()
-    {
+    {        sfxMenu.Play();
+
         SceneManager.LoadScene("ariefMenu");
     }
+
+    public void PutarSuaraPlayAgain()
+    {
+         sfxPlayAgain.Play();
+
+    }
+
+   /* public IEnumerator TungguSuara()
+    {
+        Debug.Log("Tunggu Suara Jalan");
+                yield return new WaitForSeconds(3);
+    }*/
 }

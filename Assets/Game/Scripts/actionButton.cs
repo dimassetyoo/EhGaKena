@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneT1ombol : MonoBehaviour
 {
-    public TMP_Text teksSkor;
+    public AudioSource sfxMenu;
+        public TMP_Text teksSkor;
     public TMP_Text teksHight;
     public int hightscore;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,6 +26,7 @@ public class SceneT1ombol : MonoBehaviour
 
     public void aksiMenu()
     {
+        sfxMenu.Play();
         SceneManager.LoadScene("ariefMenu");
     }
 
